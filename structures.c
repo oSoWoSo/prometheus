@@ -3,7 +3,7 @@
 #include <string.h>
 #include <assert.h>
 #include <stdatomic.h>
-
+//what are these structs??
 #define FS_MAGIC 0x4D585346UL
 #define SUPERBLOCK_VERSION 1
 #define UUID_LEN 16
