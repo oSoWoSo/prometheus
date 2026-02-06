@@ -10,8 +10,7 @@ body:
     id: content
     attributes:
       label: Description
-      description: Include as much details as possible
-      placeholder: Your suggestion
+      placeholder: Include as much details as possible
     validations:
       required: true
   - type: dropdown
