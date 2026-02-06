@@ -9,7 +9,7 @@ body:
   - type: textarea
     id: content
     attributes:
-      label: Your suggestion or implementation suggestion
+      label: Description
       description: Include as much details as possible
       placeholder: One step ahead
       value: "Tell us more about your suggestion"
