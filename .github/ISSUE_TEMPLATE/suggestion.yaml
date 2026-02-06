@@ -31,8 +31,8 @@ body:
   - type: checkboxes
     id: terms
     attributes:
-      label: This issue does not exist yet
-      description: Please look up possible existing suggestion to avoid duplicate issues
+      label: Terms
       options:
         - label: I agree to follow this project's Code of Conduct
           required: true
+        - label: This issue does not exist yet
