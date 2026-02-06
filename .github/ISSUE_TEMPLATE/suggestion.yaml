@@ -5,7 +5,6 @@ labels: ["suggestion"]
 projects: ["kegomimu/1"]
 assignees:
   - kegomimu
-type: suggestion
 body:
   - type: markdown
     attributes:
