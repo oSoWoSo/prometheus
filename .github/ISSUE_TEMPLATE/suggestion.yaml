@@ -1,0 +1,43 @@
+name: Suggestion
+description: Suggest a new feature or the possible implementation of an already suggested feature
+title: ""
+labels: ["suggestion"]
+projects: ["kegomimu/1"]
+assignees:
+  - kegomimu
+type: suggestion
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this bug report!
+  - type: textarea
+    id: content
+    attributes:
+      label: Your suggestion or implementation suggestion
+      description: Include as much details as possible
+      placeholder: One step ahead
+      value: ""
+    validations:
+      required: true
+  - type: dropdown
+    id: type
+    attributes:
+      label: Affected code part
+      description: Which code part is the suggestion for?
+      options:
+        - Structures
+        - Encryption
+        - Security
+        - Other
+      default: 0
+    validations:
+      required: true
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: This issue does not exist yet
+      description: Please look up possible existing suggestion to avoid duplicate issues
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
