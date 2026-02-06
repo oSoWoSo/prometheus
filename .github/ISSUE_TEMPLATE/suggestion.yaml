@@ -3,8 +3,6 @@ description: Suggest a new feature or the possible implementation of an already 
 title: "Suggestion"
 labels: ["suggestion"]
 projects: ["kegomimu/1"]
-assignees:
-  - kegomimu
 body:
   - type: textarea
     id: content
