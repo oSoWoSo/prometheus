@@ -17,6 +17,10 @@ Final release is planned around 2029.
 
 ## Threat Model
 
+The threat model does not include migitations for the attacks below as those can't be migitated on a software level
+- Evil maid attacks
+- Social engineering
+
 - [Assets](#Assets)
 - [Adversaries](#Adversaries)
 - [Capabilities](#Capabilities)
