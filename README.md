@@ -7,6 +7,9 @@ Currently not licensed GPLv2 as it should not be released yet.
 ## Threat Model
 
 - [Assets](#Assets)
+- [Adversaries](#Adversaries)
+- [Capatibilities](#Capatibilities]
+- [Security Goals](#Security Goals)
 
 ### Assets
 
