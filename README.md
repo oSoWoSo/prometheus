@@ -10,6 +10,7 @@ Currently not licensed GPLv2 as it should not be released yet.
 - [Adversaries](#Adversaries)
 - [Capabilities](#Capabilities)
 - [Security Goals](#SecurityGoals)
+- [Assumptions](#Assumptions)
 
 ### Assets
 
