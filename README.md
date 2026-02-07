@@ -21,6 +21,7 @@ The threat model does not include migitations for the attacks below as those can
 - Evil maid attacks
 - Social engineering
 
+
 - [Assets](#Assets)
 - [Adversaries](#Adversaries)
 - [Capabilities](#Capabilities)
