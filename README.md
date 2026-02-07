@@ -20,8 +20,8 @@ Final release is planned around 2029.
 - [Assets](#Assets)
 - [Adversaries](#Adversaries)
 - [Capabilities](#Capabilities)
-- [Security Goals](#SecurityGoals)
 - [Assumptions](#Assumptions)
+- [Scenarios](#Scenarios)
 
 ### Assets
 
@@ -44,13 +44,6 @@ Final release is planned around 2029.
 - Tools to perform forensic analysis, brute-force/offline attacks, or memory extraction.
 - Knowledge of user's online footprints (e.g., social media)
 
-### Security Goals
-
-- Confidentiality: prevent unauthorized access to primary data.
-- Plausible deniability: present believable decoy data that satisfies coercion without revealing primary assets.
-- Integrity: ensure device OS and software have not been tampered with.
-- Availability: maintain legitimate access to data for the rightful user.
-
 ### Assumptions
 
 - User can choose and implement strong, well-vetted cryptographic algorithms and key management.
@@ -58,7 +51,7 @@ Final release is planned around 2029.
 - Attacker may be able to inspect device state and boot environment.
 - Attacker may coerce the user while the device is powered off, powered on, or running.
 
-### Threat Scenarios
+### Scenarios
 
 1. Opportunistic access to unlocked device
     - Risk: Attacker accesses primary data directly.
