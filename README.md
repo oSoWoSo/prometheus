@@ -16,6 +16,14 @@ The final release is estimated to be released 2029.
 | Language Selection | - | ❌ |
 | Development | - | ❌ |
 
+## Structures
+
+This section helps organizing all issues relevant for development.
+
+| Structure | Issue |
+| --- | --- |
+| Directory Header | #14 |
+
 ## Threat Model
 
 The threat model does not include migitations for the attacks below as those can't be migitated on a software level
