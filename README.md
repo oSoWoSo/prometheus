@@ -20,11 +20,11 @@ The final release is estimated to be released 2029.
 
 This section helps organizing all issues relevant for development.
 
-| Structure | Issue |
+| Structure | Issue | Description |
 | --- | --- |
-| File Header | - |
-| Directory Header | [#14](https://github.com/kegomimu/prometheus/issues/14) |
-| User Header | [#16](https://github.com/kegomimu/prometheus/issues/16) |
+| File Header | - | Stores file properties and chunk addresses |
+| Directory Header | [#14](https://github.com/kegomimu/prometheus/issues/14) | Includes the corresponding files |
+| User Header | [#16](https://github.com/kegomimu/prometheus/issues/16) | Allows exchange of files between multiple users while preserving security for the private keys |
 
 ## Threat Model
 
