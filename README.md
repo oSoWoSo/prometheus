@@ -12,8 +12,8 @@ The final release is estimated to be released 2029.
 
 | Description | ETA or date of completion | Completed |
 | --- | --- | --- |
-| Brainstorming | 01.06.2026 | ❌ |
-| Language Selection | - | ❌ |
+| Brainstorming | 01.05.2026 | ❌ |
+| Language Selection | 07.05.2026 | ❌ |
 | Development | - | ❌ |
 
 ## Structures
