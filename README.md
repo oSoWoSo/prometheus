@@ -6,7 +6,7 @@ Not licensed GPLv2 yet as the project is still ongoing. Once the project reaches
 
 ## Roadmap and ETA
 
-The final release is estimated to be released 2029.
+The final build is estimated to be released 2029.
 
 ### Roadmap
 
