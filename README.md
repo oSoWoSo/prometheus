@@ -11,7 +11,7 @@ The final release is estimated to be released 2029.
 ### Roadmap
 
 | Description | ETA or date of completion | Completed |
-| --- | --- | --- | --- |
+| --- | --- | --- |
 | Brainstorming | 01.06.2026 | ❌ |
 | Language Selection | - | ❌ |
 | Development | - | ❌ |
@@ -21,7 +21,7 @@ The final release is estimated to be released 2029.
 This section helps organizing all issues relevant for development.
 
 | Structure | Issue | Description |
-| --- | --- |
+| --- | --- | --- |
 | File Header | - | Stores file properties and chunk addresses |
 | Directory Header | [#14](https://github.com/kegomimu/prometheus/issues/14) | Includes the corresponding files |
 | User Header | [#16](https://github.com/kegomimu/prometheus/issues/16) | Allows exchange of files between multiple users while preserving security for the private keys |
