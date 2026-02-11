@@ -6,7 +6,7 @@ Not licensed GPLv2 yet as the project is still ongoing. Once the project reaches
 
 ## Features and Comparison
 
-**Prometheus is based on research documents and tries to implement the suggestions told in those.**
+**Prometheus is unlike other filesystems based on publicy available research documents and tries to implement the measurements suggested in those.**
 Veracrypt is not a filesystem.
 
 - Post-quantum secure encryption
