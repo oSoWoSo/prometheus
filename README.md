@@ -12,7 +12,7 @@ _Veracrypt is not a filesystem_
 
 - Post-quantum secure encryption
 - Cascade encryption
-- Thin kernel module to increase performance
+- Lightweight kernel module (few hundred lines) for increased performance
 - Multiple volumes as well as decoy volumes
 - Support for multiple users with a shared folder and proper ACL implementation
 
