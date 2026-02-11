@@ -11,10 +11,13 @@ _Veracrypt is not a filesystem_
 **Prometheus is unlike other filesystems based on publicy available research documents and tries to implement the measurements suggested in those.**
 
 - Post-quantum secure encryption
+- Invisible plausible deniability[^1]
 - Cascade encryption
 - Lightweight kernel module (few hundred lines) for increased performance
-- Multiple volumes as well as decoy volumes
+- Supports multiple volumes as well as decoy volumes
 - Support for multiple users with a shared folder and proper ACL implementation
+
+[^1]: Based on INVISILINE
 
 ## Roadmap and ETA
 
