@@ -18,8 +18,6 @@ _Veracrypt is not a filesystem_
 - Supports multiple users with a shared folder
 - Proper ACL implementation
 
-[^1]: Based on INVISILINE
-
 ## Roadmap and ETA
 
 A working build integrating all features initially planned is estimated to be released 2029.
@@ -42,3 +40,9 @@ This section helps organizing all issues relevant for development.
 | Directory Header | [#14](https://github.com/kegomimu/prometheus/issues/14) | Includes the corresponding files |
 | Keyslot | [#17](https://github.com/kegomimu/prometheus/issues/17) | Contains encryption secrets |
 | User Header | [#16](https://github.com/kegomimu/prometheus/issues/16) | Allows exchange of files between multiple users while preserving security for the private keys |
+
+---
+
+## Footnotes
+
+[^1]: Based on INVISILINE
