@@ -4,6 +4,8 @@ An encrypted, next-generation filesystem that aims to protect from cryptoanalysi
 
 Not licensed AGPLv3 yet as the project is still ongoing. Once the project reaches a stable base, we'll change the license.
 
+**Overview**
+
 ## Features and Comparison
 
 _Veracrypt is not a filesystem_
@@ -40,8 +42,6 @@ This section helps organizing all issues relevant for development.
 | Directory Header | [#14](https://github.com/kegomimu/prometheus/issues/14) | Includes the corresponding files |
 | Keyslot | [#17](https://github.com/kegomimu/prometheus/issues/17) | Contains encryption secrets |
 | User Header | [#16](https://github.com/kegomimu/prometheus/issues/16) | Allows exchange of files between multiple users while preserving security for the private keys |
-
----
 
 ## Footnotes
 
