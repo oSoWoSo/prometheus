@@ -34,8 +34,8 @@ A working build integrating all features initially planned is estimated to be re
 
 | Description | ETA or date of completion | Completed |
 | --- | --- | --- |
-| Brainstorming | 01.05.2026 | ❌ |
-| Language Selection | 07.05.2026 | ❌ |
+| Brainstorming | 01.07.2026 | ❌ |
+| Language Selection | 07.07.2026 | ❌ |
 | Development | - | ❌ |
 
 ## Structures
