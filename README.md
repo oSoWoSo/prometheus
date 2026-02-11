@@ -4,6 +4,17 @@ An encrypted, next-generation filesystem that aims to protect from cryptoanalysi
 
 Not licensed GPLv2 yet as the project is still ongoing. Once the project reaches a stable base, we'll change the license.
 
+## Features and Comparison
+
+**Prometheus is based on research documents and tries to implement the suggestions told in those.**
+Veracrypt is not a filesystem.
+
+- Post-quantum secure encryption
+- Cascade encryption
+- Thin kernel module to increase performance
+- Multiple volumes as well as decoy volumes
+- Support for multiple users with a shared folder and proper ACL implementation
+
 ## Roadmap and ETA
 
 A working build integrating all features initially planned is estimated to be released 2029.
