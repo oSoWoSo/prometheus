@@ -9,12 +9,12 @@ Not licensed AGPLv3 yet as the project is still ongoing. Once the project reache
 - Features and Comparison
 - Roadmap and ETA
   - Roadmap
-- [Structures](#Structures)
-- [Footnotes](#Footnotes)
+- Structures
+- Footnotes
 
 ## Features and Comparison
 
-_Veracrypt is not a filesystem_
+_First off: Veracrypt is not a filesystem_
 
 **Prometheus is unlike other filesystems based on publicy available research documents and tries to implement the measurements suggested in those.**
 
