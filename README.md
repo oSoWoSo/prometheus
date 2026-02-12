@@ -48,6 +48,8 @@ _All papers were retrieved on the 11th February, 2026_
 - [Enabling Plausible Deniability in Flash-based Storage through Data Permutation](https://weidong-zhu.github.io/files/mute_acsac25.pdf)
 - [Threat Models for Analyzing Plausible Deniability of Deniable File Systems](https://www.riverpublishers.com/journal/journal_articles/RP_Journal_2445-9739_20171012.pdf)
 - [Data corruption in plausibly deniable storage: challenges and potential solutions](https://infoscience.epfl.ch/server/api/core/bitstreams/d19851b2-9a7b-4dc8-bb83-e32dcc937b1c/content)
+- [Apple File System Reference](https://developer.apple.com/support/downloads/Apple-File-System-Reference.pdf)
+
 
 
 ## Roadmap and ETA
