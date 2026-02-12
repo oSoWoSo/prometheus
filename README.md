@@ -42,6 +42,7 @@ _All papers were retrieved on the 11th February, 2026_
 - [A Study of Linux File System Evolution](https://research.cs.wisc.edu/adsl/Publications/fsstudy-fast13.pdf)
 - [Understanding Security Vulnerabilities in File Systems](https://jianh.web.engr.illinois.edu/papers/securefs-apsys19.pdf)
 - [File Systems as Processes](https://www.usenix.org/system/files/hotstorage19-paper-liu_0.pdf)
+- [Plausibly deniable encryption with large language models](https://openreview.net/pdf?id=7suavRDxe8)
 
 ## Roadmap and ETA
 
