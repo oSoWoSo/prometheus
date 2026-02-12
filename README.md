@@ -40,6 +40,7 @@ _All papers were retrieved on the 11th February, 2026_
 - [File Hijacking Vulnerability: The Elephant in the Room](https://www.ndss-symposium.org/wp-content/uploads/2024-38-paper.pdf)
 - [Operation Systems: File Systems](https://course.ccs.neu.edu/cs3650f21/new/Lectures/12/lecture_16--File_systems.pdf)
 - [A Study of Linux File System Evolution](https://research.cs.wisc.edu/adsl/Publications/fsstudy-fast13.pdf)
+- [Understanding Security Vulnerabilities in File Systems](https://jianh.web.engr.illinois.edu/papers/securefs-apsys19.pdf)
 
 ## Roadmap and ETA
 
