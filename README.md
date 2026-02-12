@@ -31,7 +31,7 @@ _First off: Veracrypt is not a filesystem_
 
 The research papers below are used to maxmize security in this next-generation filesystem.
 
-- INVISILINE
+- [Extension Framework for File Systems in User space](https://www.usenix.org/system/files/atc19-bijlani.pdf)
 
 ## Roadmap and ETA
 
