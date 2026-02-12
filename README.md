@@ -35,7 +35,7 @@ The research papers below are used to maximize security in this next-generation 
 - [The missing guide to the security of filesystems and file APIs](https://gergelykalman.com/slides/the_missing_guide_to_filesystem_security_v1.pdf)
 - [TOCTTOU Vulnerabilities in UNIX-Style File Systems: An Anatomical Study](https://www.usenix.org/legacy/events/fast05/tech/full_papers/wei/wei.pdf)
 - [Modeling and Preventing TOCTTOU Vulnerabilities in Unix-Style File Systems](https://users.cis.fiu.edu/~weijp/Jinpeng_Homepage_files/toctou_journal_elsevier.pdf)
-- [File Hijacking Vulnerability: The Elephant in the Room]()
+- [File Hijacking Vulnerability: The Elephant in the Room](https://www.ndss-symposium.org/wp-content/uploads/2024-38-paper.pdf)
 
 ## Roadmap and ETA
 
