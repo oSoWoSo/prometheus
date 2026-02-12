@@ -7,6 +7,7 @@ Not licensed AGPLv3 yet as the project is still ongoing. Once the project reache
 **Overview**
 
 - Features and Comparison
+  - Research papers
 - Roadmap and ETA
   - Roadmap
 - Structures
