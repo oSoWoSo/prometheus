@@ -46,6 +46,7 @@ _All papers were retrieved on the 11th February, 2026_
 - [Artifice: A Deniable Steganographic File System](https://www.usenix.org/system/files/foci19-paper_barker.pdf)
 - [INVISILINE: Invisible Plausibly-Deniable Storage](https://users.cs.fiu.edu/~carbunar/invisiline.pdf)
 - [Enabling Plausible Deniability in Flash-based Storage through Data Permutation](https://weidong-zhu.github.io/files/mute_acsac25.pdf)
+- [Threat Models for Analyzing Plausible Deniability of Deniable File Systems](https://www.riverpublishers.com/journal/journal_articles/RP_Journal_2445-9739_20171012.pdf)
 
 ## Roadmap and ETA
 
