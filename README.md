@@ -43,6 +43,7 @@ _All papers were retrieved on the 11th February, 2026_
 - [Understanding Security Vulnerabilities in File Systems](https://jianh.web.engr.illinois.edu/papers/securefs-apsys19.pdf)
 - [File Systems as Processes](https://www.usenix.org/system/files/hotstorage19-paper-liu_0.pdf)
 - [Plausibly deniable encryption with large language models](https://openreview.net/pdf?id=7suavRDxe8)
+- [Artifice: A Deniable Steganographic File System](https://www.usenix.org/system/files/foci19-paper_barker.pdf)
 
 ## Roadmap and ETA
 
