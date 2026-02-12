@@ -6,14 +6,14 @@ Not licensed AGPLv3 yet as the project is still ongoing. Once the project reache
 
 **Overview**
 
-- Features and Comparison
+- Features
   - Research papers
 - Roadmap and ETA
   - Roadmap
 - Structures
 - Footnotes
 
-## Features and Comparison
+## Features
 
 _First off: Veracrypt is not a filesystem_
 
