@@ -29,7 +29,7 @@ _First off: Veracrypt is not a filesystem_
 
 ### Research papers
 
-The research papers below are used to maxmize security in this next-generation filesystem.
+The research papers below are used to maximize security in this next-generation filesystem.
 
 - [Extension Framework for File Systems in User space](https://www.usenix.org/system/files/atc19-bijlani.pdf)
 
