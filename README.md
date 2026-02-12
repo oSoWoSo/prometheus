@@ -51,6 +51,7 @@ _All papers were retrieved on the 11th February, 2026_
 - [Apple File System Reference](https://developer.apple.com/support/downloads/Apple-File-System-Reference.pdf)
 - [Technical White Paper for Copy Anti-tampering](https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/d3dc434846db428082a1ad0f1f7eaff4/M2T1A590N971850264796590242/Huawei%20OceanProtect%20%20Appliance%201_6_0%20Technical%20White%20Paper%20for%20Copy%20Anti-tampering.pdf)
 - [LUKS2 On-Disk Format Specification](https://fossies.org/linux/cryptsetup/docs/on-disk-format-luks2.pdf)
+- [What users should know about Full Disk Encryption based on LUKS](https://eprint.iacr.org/2016/274.pdf)
 
 
 ## Roadmap and ETA
