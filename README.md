@@ -55,7 +55,7 @@ _All papers were retrieved on the 12th February, 2026_
 - [Filesystem Security](https://cs.brown.edu/cgc/net.secbook/se01/handouts/Ch03-FilesystemSecurity.pdf)
 - [Modernizing File System through In-Storage Indexing](https://www.usenix.org/system/files/osdi21-koo.pdf)
 - [Persistence: File Systems and RAID](https://tddg.github.io/cs571-spring21/public/lecs/lec10-persis-fs-raid+note.pdf)
-
+- [I know What You Sync: Covert and Side Channel Attacks on File Systems via syncfs](https://arxiv.org/pdf/2411.10883v1)
 
 ## Roadmap and ETA
 
