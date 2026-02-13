@@ -54,6 +54,8 @@ _All papers were retrieved on the 12th February, 2026_
 - [What users should know about Full Disk Encryption based on LUKS](https://eprint.iacr.org/2016/274.pdf)
 - [Filesystem Security](https://cs.brown.edu/cgc/net.secbook/se01/handouts/Ch03-FilesystemSecurity.pdf)
 - [Modernizing File System through In-Storage Indexing](https://www.usenix.org/system/files/osdi21-koo.pdf)
+- [Persistence: File Systems and RAID](https://tddg.github.io/cs571-spring21/public/lecs/lec10-persis-fs-raid+note.pdf)
+
 
 ## Roadmap and ETA
 
