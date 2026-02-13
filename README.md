@@ -53,6 +53,7 @@ _All papers were retrieved on the 12th February, 2026_
 - [LUKS2 On-Disk Format Specification](https://fossies.org/linux/cryptsetup/docs/on-disk-format-luks2.pdf)
 - [What users should know about Full Disk Encryption based on LUKS](https://eprint.iacr.org/2016/274.pdf)
 - [Filesystem Security](https://cs.brown.edu/cgc/net.secbook/se01/handouts/Ch03-FilesystemSecurity.pdf)
+- [Modernizing File System through In-Storage Indexing](https://www.usenix.org/system/files/osdi21-koo.pdf)
 
 ## Roadmap and ETA
 
