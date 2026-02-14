@@ -1,4 +1,4 @@
-name: Build GitHub Pages from LFS files
+name: Build GitHub Pages from md files
 
 on:
   push:
