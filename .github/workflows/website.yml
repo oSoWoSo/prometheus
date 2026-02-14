@@ -44,7 +44,7 @@ jobs:
             localStorage.setItem("theme",next)
           }
           (function(){
-            const saved=localStorage.getItem("theme")||"light";
+            const saved=localStorage.getItem("theme")||"dark";
             document.documentElement.setAttribute("data-theme",saved)
           })();
           </script>
@@ -57,9 +57,9 @@ jobs:
             output="_site/${file%.md}.html"
             echo "Processing: $file → $output"
             if [ "$file" = README.md ]; then
-              pandoc "$file" -s --css=styles.css --metadata title=prometheus --include-after-body=/tmp/toggle.html -o _site/index.html
+              pandoc "$file" -s --css=styles.css --include-after-body=/tmp/toggle.html -o _site/index.html
             else
-              pandoc "$file" -s --css=styles.css --metadata title="${file%.md}" --include-after-body=/tmp/toggle.html -o "$output"
+              pandoc "$file" -s --css=styles.css --include-after-body=/tmp/toggle.html -o "$output"
             fi
           done
 
