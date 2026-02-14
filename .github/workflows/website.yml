@@ -19,9 +19,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-
       - name: 🛎️ Checkout
         uses: actions/checkout@v6
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
 
       - name: Install Pandoc
         run: sudo apt-get update && sudo apt-get install -y pandoc
@@ -60,13 +62,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v6
         with:
-          name: built-site
-          path: _site/
+          path: '_site/'
 
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.TOKEN }}
-          publish_dir: ./_site
-          publish_branch: main
+        id: deployment
+        uses: actions/deploy-pages@v4
