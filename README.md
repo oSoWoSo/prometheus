@@ -2,8 +2,9 @@
 
 [![Open Source Helpers](https://www.codetriage.com/kegomimu/prometheus/badges/users.svg)](https://www.codetriage.com/kegomimu/prometheus)
 
-> [!NOTE]
-> This project is being made by [kegomimu & contributors](https://github.com/kegomimu/prometheus).
+Developed by [kegomimu & contributors](https://github.com/kegomimu/prometheus/graphs/contributors)
+
+---
 
 An encrypted, next-generation filesystem that aims to protect from cryptoanalysis as well as 5$ wrench attacks.
 
