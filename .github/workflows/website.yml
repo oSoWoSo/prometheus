@@ -56,10 +56,10 @@ jobs:
             [ -f "$file" ] || continue
             output="_site/${file%.md}.html"
             echo "Processing: $file → $output"
-            if [ "$f" = README.md ]; then
-              pandoc "$f" -s --css=styles.css --metadata title=prometheus --include-after-body=/tmp/toggle.html -o _site/index.html
+            if [ "$file" = README.md ]; then
+              pandoc "$file" -s --css=styles.css --metadata title=prometheus --include-after-body=/tmp/toggle.html -o _site/index.html
             else
-              pandoc "$f" -s --css=styles.css --metadata title="${file%.md}" --include-after-body=/tmp/toggle.html -o "$output"
+              pandoc "$file" -s --css=styles.css --metadata title="${file%.md}" --include-after-body=/tmp/toggle.html -o "$output"
             fi
           done
 
