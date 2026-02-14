@@ -32,7 +32,8 @@ jobs:
 
       - name: Create html
         run: |
-          find . -name "*.md" -exec pandoc -o _site/{}.html {} \;
+          mkdir -p _site
+          find ./ -maxdepth 1 -name "*.md" -exec sh -c 'pandoc "$0" -s -o "_site/${0%.md}.html"' {} \;
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
