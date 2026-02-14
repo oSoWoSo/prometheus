@@ -38,8 +38,8 @@ jobs:
           <script>
           function toggleTheme(){
             const html=document.documentElement;
-            const current=html.getAttribute("data-theme")||"light";
-            const next=current==="light"?"dark":"light";
+            const current=html.getAttribute("data-theme")||"dark";
+            const next=current==="dark"?"light":"dark";
             html.setAttribute("data-theme",next);
             localStorage.setItem("theme",next)
           }
