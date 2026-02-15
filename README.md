@@ -1,5 +1,3 @@
-# Prometheus
-
 [![Open Source Helpers](https://www.codetriage.com/kegomimu/prometheus/badges/users.svg)](https://www.codetriage.com/kegomimu/prometheus)
 
 Developed by [kegomimu & contributors](https://github.com/kegomimu/prometheus/graphs/contributors)
