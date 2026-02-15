@@ -23,8 +23,8 @@ _First off: Veracrypt is not a filesystem_
 
 **Prometheus is unlike other filesystems based on publicy available research documents and tries to implement the measurements suggested in those.**
 
-- Post-quantum secure encryption
-- Invisible plausible deniability[^1]
+- PQ-secure[^1] Encryption
+- Invisible plausible deniability[^2]
 - Cascade encryption
 - Lightweight kernel module (few hundred lines) for increased performance
 - Supports multiple volumes as well as decoy volumes
@@ -67,7 +67,7 @@ _All papers were retrieved on the 12th February, 2026_
 
 ## Roadmap and ETA
 
-A working build integrating all features initially planned is estimated to be released 2029.
+A working build integrating all features initially planned is estimated to be released 2031.
 
 ### Roadmap
 
@@ -77,18 +77,7 @@ A working build integrating all features initially planned is estimated to be re
 | Language Selection | 07.07.2026 | ❌ |
 | Development | - | ❌ |
 
-## Structures
-
-This section helps organizing all issues relevant for development.
-
-| Structure | Issue | Description |
-| --- | --- | --- |
-| Superblock | [#30](https://github.com/kegomimu/prometheus/issues/30) | Disk properties |
-| File Header | [#10](https://github.com/kegomimu/prometheus/issues/10) | Stores file properties and chunk addresses |
-| Directory Header | [#14](https://github.com/kegomimu/prometheus/issues/14) | Includes the corresponding files |
-| Keyslot | [#17](https://github.com/kegomimu/prometheus/issues/17) | Contains encryption secrets |
-| User Header | [#16](https://github.com/kegomimu/prometheus/issues/16) | Allows exchange of files between multiple users while preserving security for the private keys |
-
 ## Footnotes
 
-[^1]: Based on INVISILINE
+[^1]: Post-quantum secure
+[^2]: Based on INVISILINE
