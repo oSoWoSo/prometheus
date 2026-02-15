@@ -23,10 +23,10 @@ _First off: Veracrypt is not a filesystem_
 
 **Prometheus is unlike other filesystems based on publicy available research documents and tries to implement the measurements suggested in those.**
 
-- PQ-secure[^1] Encryption
+- PQ-secure Encryption[^1]
 - Invisible plausible deniability[^2]
-- Cascade encryption
-- Lightweight kernel module (few hundred lines) for increased performance
+- Cascade Encryption
+- Lightweight kernel module (few hundred LOC) for increased performance
 - Supports multiple volumes as well as decoy volumes
 - Supports multiple users with a shared folder
 - Proper ACL implementation
@@ -79,5 +79,5 @@ A working build integrating all features initially planned is estimated to be re
 
 ## Footnotes
 
-[^1]: Post-quantum secure
+[^1]: Using a KEM
 [^2]: Based on INVISILINE
