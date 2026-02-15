@@ -30,8 +30,10 @@ _First off: Veracrypt is not a filesystem_
 - Supports multiple volumes as well as decoy volumes
 - Supports multiple users with a shared folder
 - Proper ACL implementation
-- File consistency (fail-safe I/O operations)
-- Error correction
+- File Consistency (fail-safe I/O operations)
+- Error Correction
+- Concurrency for non-sensitive Operations
+- Encrypted Ressource Caching
 
 ### Research papers
 
