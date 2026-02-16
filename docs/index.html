@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Prometheus</title>
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+<script>
+  function toggleTheme(){
+    const html=document.documentElement;
+    const current=html.getAttribute("data-theme")||"dark";
+    const next=current==="dark"?"light":"dark";
+    html.setAttribute("data-theme",next);
+    localStorage.setItem("theme",next)
+  }
+  (function(){
+    const saved=localStorage.getItem("theme")||"dark";
+    document.documentElement.setAttribute("data-theme",saved)
+  })();
+</script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toc = document.getElementById("TOC");
+    if (!toc) return;
+
+    // Add toc-title with toggle button
+    const titleEl = document.createElement("div");
+    titleEl.id = "toc-title";
+    titleEl.innerHTML = '<span>Contents</span><span id="toc-toggle-icon">◀</span>';
+    toc.insertBefore(titleEl, toc.firstChild);
+
+    // Wrap TOC + the rest of the content in .page-wrapper
+    const body = document.body;
+    const wrapper = document.createElement("div");
+    wrapper.className = "page-wrapper";
+
+    // Find all elements after <nav> (main nav menu)
+    const topNav = document.querySelector("body > nav");
+    const siblings = [];
+    let el = topNav ? topNav.nextElementSibling : body.firstElementChild;
+    while (el) {
+      siblings.push(el);
+      el = el.nextElementSibling;
+    }
+
+    siblings.forEach((s) => wrapper.appendChild(s));
+    body.appendChild(wrapper);
+
+    // Wrap main content (everything except TOC) in .main-content
+    const mainContent = document.createElement("div");
+    mainContent.className = "main-content";
+    Array.from(wrapper.children).forEach((child) => {
+      if (child.id !== "TOC") mainContent.appendChild(child);
+    });
+    wrapper.appendChild(mainContent);
+
+    // Collapsible toggle
+    const icon = document.getElementById("toc-toggle-icon");
+    const saved = localStorage.getItem("toc-collapsed");
+    if (saved === "true") {
+      toc.classList.add("collapsed");
+      icon.textContent = "▶";
+    }
+
+    titleEl.addEventListener("click", function () {
+      toc.classList.toggle("collapsed");
+      const isCollapsed = toc.classList.contains("collapsed");
+      icon.textContent = isCollapsed ? "▶" : "◀";
+      localStorage.setItem("toc-collapsed", isCollapsed);
+    });
+  });
+</script>
+<nav><ul>
+  <li><a href="https://osowoso.org">oSoWoSo</a></li>
+  <li><a href="index.html" class="active">Home</a></li>
+  <li><a class="no-release" href="https://github.com/oSoWoSo/prometheus/releases/latest">⏬ release</a></li>
+  <li><a href="https://github.com/oSoWoSo/prometheus/archive/refs/heads/main.zip">📦repo zip</a></li>
+  <li><a href="https://github.com/oSoWoSo/prometheus">🔗git</a></li>
+  <li>⏭️</a></li>
+</ul></nav>
+<header id="title-block-header">
+<h1 class="title">Prometheus</h1>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#features" id="toc-features">Features</a>
+<ul>
+<li><a href="#research-papers" id="toc-research-papers">Research
+papers</a></li>
+</ul></li>
+<li><a href="#roadmap-and-eta" id="toc-roadmap-and-eta">Roadmap and
+ETA</a>
+<ul>
+<li><a href="#roadmap" id="toc-roadmap">Roadmap</a></li>
+</ul></li>
+<li><a href="#footnotes" id="toc-footnotes">Footnotes</a></li>
+</ul>
+</nav>
+<p><a href="https://www.codetriage.com/kegomimu/prometheus"><img
+src="https://www.codetriage.com/kegomimu/prometheus/badges/users.svg"
+alt="Open Source Helpers" /></a></p>
+<p>Developed by <a
+href="https://github.com/kegomimu/prometheus/graphs/contributors">kegomimu
+&amp; contributors</a></p>
+<hr />
+<p>An encrypted, next-generation filesystem that aims to protect from
+cryptoanalysis as well as 5$ wrench attacks.</p>
+<p>Not licensed AGPLv3 yet as the project is still ongoing. Once the
+project reaches a stable base, we'll change the license.</p>
+<p><strong>Overview</strong></p>
+<ul>
+<li>Features
+<ul>
+<li>Research papers</li>
+</ul></li>
+<li>Roadmap and ETA
+<ul>
+<li>Roadmap</li>
+</ul></li>
+<li>Footnotes</li>
+</ul>
+<h2 id="features">Features</h2>
+<p><em>First off: Veracrypt is not a filesystem</em></p>
+<p><strong>Prometheus is unlike other filesystems based on publicy
+available research documents and tries to implement the measurements
+suggested in those.</strong></p>
+<ul>
+<li>PQ-secure Encryption<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a></li>
+<li>Invisible plausible deniability<a href="#fn2" class="footnote-ref"
+id="fnref2" role="doc-noteref"><sup>2</sup></a></li>
+<li>Cascade Encryption</li>
+<li>Lightweight kernel module (few hundred LOC) for increased
+performance</li>
+<li>Supports multiple volumes as well as decoy volumes</li>
+<li>Supports multiple users with a shared folder</li>
+<li>Proper ACL implementation</li>
+<li>File Consistency (fail-safe I/O operations)</li>
+<li>Error Correction</li>
+<li>Concurrency for non-sensitive Operations</li>
+<li>Encrypted Ressource Caching</li>
+</ul>
+<h3 id="research-papers">Research papers</h3>
+<p>These papers are actively being used to maximize security.</p>
+<p><em>All papers were retrieved on the 12th February, 2026</em></p>
+<ul>
+<li><a
+href="https://www.usenix.org/system/files/atc19-bijlani.pdf">Extension
+Framework for File Systems in User space</a></li>
+<li><a
+href="https://gergelykalman.com/slides/the_missing_guide_to_filesystem_security_v1.pdf">The
+missing guide to the security of filesystems and file APIs</a></li>
+<li><a
+href="https://www.usenix.org/legacy/events/fast05/tech/full_papers/wei/wei.pdf">TOCTTOU
+Vulnerabilities in UNIX-Style File Systems: An Anatomical Study</a></li>
+<li><a
+href="https://users.cis.fiu.edu/~weijp/Jinpeng_Homepage_files/toctou_journal_elsevier.pdf">Modeling
+and Preventing TOCTTOU Vulnerabilities in Unix-Style File
+Systems</a></li>
+<li><a
+href="https://www.ndss-symposium.org/wp-content/uploads/2024-38-paper.pdf">File
+Hijacking Vulnerability: The Elephant in the Room</a></li>
+<li><a
+href="https://course.ccs.neu.edu/cs3650f21/new/Lectures/12/lecture_16--File_systems.pdf">Operation
+Systems: File Systems</a></li>
+<li><a
+href="https://research.cs.wisc.edu/adsl/Publications/fsstudy-fast13.pdf">A
+Study of Linux File System Evolution</a></li>
+<li><a
+href="https://jianh.web.engr.illinois.edu/papers/securefs-apsys19.pdf">Understanding
+Security Vulnerabilities in File Systems</a></li>
+<li><a
+href="https://www.usenix.org/system/files/hotstorage19-paper-liu_0.pdf">File
+Systems as Processes</a></li>
+<li><a href="https://openreview.net/pdf?id=7suavRDxe8">Plausibly
+deniable encryption with large language models</a></li>
+<li><a
+href="https://www.usenix.org/system/files/foci19-paper_barker.pdf">Artifice:
+A Deniable Steganographic File System</a></li>
+<li><a
+href="https://users.cs.fiu.edu/~carbunar/invisiline.pdf">INVISILINE:
+Invisible Plausibly-Deniable Storage</a></li>
+<li><a
+href="https://weidong-zhu.github.io/files/mute_acsac25.pdf">Enabling
+Plausible Deniability in Flash-based Storage through Data
+Permutation</a></li>
+<li><a
+href="https://www.riverpublishers.com/journal/journal_articles/RP_Journal_2445-9739_20171012.pdf">Threat
+Models for Analyzing Plausible Deniability of Deniable File
+Systems</a></li>
+<li><a
+href="https://infoscience.epfl.ch/server/api/core/bitstreams/d19851b2-9a7b-4dc8-bb83-e32dcc937b1c/content">Data
+corruption in plausibly deniable storage: challenges and potential
+solutions</a></li>
+<li><a
+href="https://developer.apple.com/support/downloads/Apple-File-System-Reference.pdf">Apple
+File System Reference</a></li>
+<li><a
+href="https://e.huawei.com/marketingcloud/pep/asset/20000001/Material/d3dc434846db428082a1ad0f1f7eaff4/M2T1A590N971850264796590242/Huawei%20OceanProtect%20%20Appliance%201_6_0%20Technical%20White%20Paper%20for%20Copy%20Anti-tampering.pdf">Technical
+White Paper for Copy Anti-tampering</a></li>
+<li><a
+href="https://fossies.org/linux/cryptsetup/docs/on-disk-format-luks2.pdf">LUKS2
+On-Disk Format Specification</a></li>
+<li><a href="https://eprint.iacr.org/2016/274.pdf">What users should
+know about Full Disk Encryption based on LUKS</a></li>
+<li><a
+href="https://cs.brown.edu/cgc/net.secbook/se01/handouts/Ch03-FilesystemSecurity.pdf">Filesystem
+Security</a></li>
+<li><a
+href="https://www.usenix.org/system/files/osdi21-koo.pdf">Modernizing
+File System through In-Storage Indexing</a></li>
+<li><a
+href="https://tddg.github.io/cs571-spring21/public/lecs/lec10-persis-fs-raid+note.pdf">Persistence:
+File Systems and RAID</a></li>
+<li><a href="https://arxiv.org/pdf/2411.10883v1">I know What You Sync:
+Covert and Side Channel Attacks on File Systems via syncfs</a></li>
+</ul>
+<h2 id="roadmap-and-eta">Roadmap and ETA</h2>
+<p>A working build integrating all features initially planned is
+estimated to be released 2031.</p>
+<h3 id="roadmap">Roadmap</h3>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>ETA or date of completion</th>
+<th>Completed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Brainstorming</td>
+<td>01.07.2026</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Language Selection</td>
+<td>07.07.2026</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Development</td>
+<td>-</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+<h2 id="footnotes">Footnotes</h2>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>Using a KEM<a href="#fnref1" class="footnote-back"
+role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Based on INVISILINE<a href="#fnref2"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+<script>
+(function () {
+  function hexToRgb(hex) {
+    hex = hex.trim().replace(/^#/, '');
+    if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+    const n = parseInt(hex, 16);
+    return [n >> 16 & 255, n >> 8 & 255, n & 255];
+  }
+
+  function clamp(v, min, max) {
+    return Math.min(Math.max(v, min), max);
+  }
+
+  function Color(r, g, b) {
+    this.r = r / 255;
+    this.g = g / 255;
+    this.b = b / 255;
+  }
+
+  Color.prototype.applyFilter = function (funcs) {
+    let [r, g, b] = [this.r * 255, this.g * 255, this.b * 255];
+
+    function multiply(matrix) {
+      const nr = clamp(r * matrix[0] + g * matrix[1] + b * matrix[2], 0, 255);
+      const ng = clamp(r * matrix[3] + g * matrix[4] + b * matrix[5], 0, 255);
+      const nb = clamp(r * matrix[6] + g * matrix[7] + b * matrix[8], 0, 255);
+      r = nr; g = ng; b = nb;
+    }
+
+    function hueRotate(angle) {
+      const a = angle / 180 * Math.PI;
+      const sin = Math.sin(a), cos = Math.cos(a);
+      multiply([
+        0.213 + cos*0.787 - sin*0.213, 0.715 - cos*0.715 - sin*0.715, 0.072 - cos*0.072 + sin*0.928,
+        0.213 - cos*0.213 + sin*0.143, 0.715 + cos*0.285 + sin*0.140, 0.072 - cos*0.072 - sin*0.283,
+        0.213 - cos*0.213 - sin*0.787, 0.715 - cos*0.715 + sin*0.715, 0.072 + cos*0.928 + sin*0.072,
+      ]);
+    }
+
+    function sepia(v) {
+      multiply([
+        0.393 + 0.607*(1-v), 0.769 - 0.769*(1-v), 0.189 - 0.189*(1-v),
+        0.349 - 0.349*(1-v), 0.686 + 0.314*(1-v), 0.168 - 0.168*(1-v),
+        0.272 - 0.272*(1-v), 0.534 - 0.534*(1-v), 0.131 + 0.869*(1-v),
+      ]);
+    }
+
+    function saturate(v) {
+      multiply([
+        0.213 + 0.787*v, 0.715 - 0.715*v, 0.072 - 0.072*v,
+        0.213 - 0.213*v, 0.715 + 0.285*v, 0.072 - 0.072*v,
+        0.213 - 0.213*v, 0.715 - 0.715*v, 0.072 + 0.928*v,
+      ]);
+    }
+
+    for (const [fn, val] of funcs) {
+      if (fn === 'invert')    { r = clamp((1-r/255)*255*val + r/255*255*(1-val),0,255); g = clamp((1-g/255)*255*val + g/255*255*(1-val),0,255); b = clamp((1-b/255)*255*val + b/255*255*(1-val),0,255); }
+      if (fn === 'sepia')     sepia(val);
+      if (fn === 'saturate')  saturate(val);
+      if (fn === 'hueRotate') hueRotate(val);
+      if (fn === 'brightness'){ r = clamp(r*val,0,255); g = clamp(g*val,0,255); b = clamp(b*val,0,255); }
+    }
+
+    return new Color(r, g, b);
+  };
+
+  function loss(result, target) {
+    return (
+      Math.pow(result.r*255 - target.r*255, 2) +
+      Math.pow(result.g*255 - target.g*255, 2) +
+      Math.pow(result.b*255 - target.b*255, 2)
+    );
+  }
+
+  function solve(target) {
+    function css(v) {
+      return [
+        ['invert',    clamp(v[0], 0, 1)],
+        ['sepia',     clamp(v[1], 0, 1)],
+        ['saturate',  clamp(v[2], 0, 20)],
+        ['hueRotate', clamp(v[3], 0, 360)],
+        ['brightness',clamp(v[4], 0, 10)],
+        ['brightness',clamp(v[5], 0, 10)],
+      ];
+    }
+
+    function score(v) {
+      return loss(new Color(0,0,0).applyFilter(css(v)), target);
+    }
+
+    let best = null, bestScore = Infinity;
+    for (let i = 0; i < 30; i++) {
+      let v = [Math.random(), Math.random(), Math.random()*10, Math.random()*360, Math.random()*2, Math.random()*2];
+      for (let step = 1; step > 0.0001; step *= 0.9) {
+        for (let j = 0; j < v.length; j++) {
+          const orig = v[j];
+          v[j] += step * (Math.random() > 0.5 ? 1 : -1);
+          const s = score(v);
+          if (s < bestScore) { bestScore = s; best = [...v]; }
+          else v[j] = orig;
+        }
+      }
+    }
+
+    const f = css(best);
+    return [
+      `invert(${(clamp(f[0][1],0,1)*100).toFixed(0)}%)`,
+      `sepia(${(clamp(f[1][1],0,1)*100).toFixed(0)}%)`,
+      `saturate(${(clamp(f[2][1],0,20)*100).toFixed(0)}%)`,
+      `hue-rotate(${clamp(f[3][1],0,360).toFixed(0)}deg)`,
+      `brightness(${(clamp(f[4][1],0,10)*100).toFixed(0)}%)`,
+      `brightness(${(clamp(f[5][1],0,10)*100).toFixed(0)}%)`,
+    ].join(' ');
+  }
+
+  // Cache solved filters per color so theme switching is instant
+  const cache = {};
+
+  function applyIconColor() {
+    const raw = getComputedStyle(document.documentElement)
+      .getPropertyValue('--color-icon').trim();
+    if (!raw) return false;
+
+    let rgb;
+    if (raw.startsWith('#')) {
+      rgb = hexToRgb(raw);
+    } else if (raw.startsWith('rgb')) {
+      rgb = raw.match(/\d+/g).map(Number).slice(0, 3);
+    } else {
+      return false;
+    }
+
+    const key = rgb.join(',');
+    if (!cache[key]) {
+      cache[key] = solve(new Color(...rgb));
+    }
+
+    document.documentElement.style.setProperty('--filter-icon', cache[key]);
+    return true;
+  }
+
+  function init() {
+    if (!applyIconColor()) return;
+
+    // Watch for data-theme attribute changes on <html> — re-apply immediately
+    new MutationObserver(function(mutations) {
+      for (const m of mutations) {
+        if (m.attributeName === 'data-theme') {
+          applyIconColor();
+          break;
+        }
+      }
+    }).observe(document.documentElement, { attributes: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>
